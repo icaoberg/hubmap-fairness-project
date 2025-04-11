@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "fair-hubmap-sdk"
+version = "0.1.0"
+description = "A Python package to measure FAIR principles on HuBMAP public datasets"
+authors = ["Ivan Cao-Berg <icaoberg@psc.edu>", "Eduardo Figueroa"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/icaoberg/hubmap-fairness-project"
+repository = "https://github.com/yourusername/hubmap-fairness-project"
+keywords = ["FAIR", "HuBMAP", "bioinformatics", "data-assessment"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.28.0"   # For HuBMAP API calls
+pandas = "^1.5.0"      # For data manipulation
+pydantic = "^1.10.0"   # For data validation
+click = "^8.1.0"       # For CLI interface
+matplotlib = "^3.6.0"  # For visualization
+rdflib = "^6.2.0"      # For ontology handling
+pyyaml = "^6.0"        # For configuration files
+hubmap-sdk = "1.0.10"  # For HuBMAP SDK functionalities
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.0"
+pytest-cov = "^4.0.0"
+black = "^22.10.0"
+flake8 = "^5.0.4"
+
+[tool.poetry.scripts]
+fair-hubmap = "fair_hubmap.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
